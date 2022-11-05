@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BuildCompany.Core.Models.Partner>
+
+@{
+    ViewBag.Title = "PartnersList";
+}
+
+<h2>Make orders from partners here</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Status == "Dobavljac")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <form action="@Url.Action("ItemsFromPartner", "Order")" method="get">
+                        <button name="companyName" value="@item.Id">Order From</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    }
+</table>

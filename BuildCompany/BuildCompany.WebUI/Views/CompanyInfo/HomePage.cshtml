@@ -1,0 +1,87 @@
+﻿@model BuildCompany.Core.ViewModels.HomePageViewModel
+
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Company Info</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <h4>@Html.DisplayNameFor(model => model.CompanyInfo.Name)</h4>
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            <h3>@Html.DisplayFor(modelItem => Model.CompanyInfo.Name)</h3>
+        </td>
+    </tr>
+</table>
+
+<br />
+<br />
+
+<h4>Companies bank accounts</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            Account number
+        </th>
+        <th>
+            Amount
+        </th>
+    </tr>
+
+    @foreach (var item in Model.BankAccounts)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount) kn
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<br />
+
+<h4>Items in the storage</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            Item name
+        </th>
+        <th>
+            Quantity
+        </th>
+    </tr>
+
+    @foreach (var item in Model.CompanyItems)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <form action="@Url.Action("RemoveItemFromStorage", "CompanyInfo")" method="get">
+                    <button name="item" value="@item.Id">REMOVE</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<br />
+
+<button>@Html.ActionLink("New Order", "PartnersList", "Order")</button>

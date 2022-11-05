@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "PayWorkerSelectAmount";
+}
+
+<h2>Select amount to pay worker @ViewBag.worker</h2>
+
+<form action="@Url.Action("PayWorker", "Order")" method="get">
+    <br />
+    <input type="hidden" name="worker" value="@ViewBag.worker" />
+    <input type="number" id="amount" name="amount">
+    <input type="submit">
+</form>

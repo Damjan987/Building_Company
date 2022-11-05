@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "ActionMenu";
+}
+
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+</style>
+
+<table id="customers" style="margin-top: 100px">
+    <tr>
+        <th>Entities</th>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Categories", "Index", "Category")</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Items", "Index", "Item")</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Bills", "Index", "Bill")</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Bank Accounts", "Index", "BankAccount")</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Partners", "Index", "Partner")</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Company Infos", "Index", "CompanyInfo")</td>
+    </tr>
+</table>

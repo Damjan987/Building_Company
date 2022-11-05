@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BuildCompany.Core.Models.CompanyItem>
+
+@{
+    ViewBag.Title = "ItemsFromPartner";
+}
+
+<h2>Select items to buy</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            Select quantity
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            <form action="@Url.Action("SelectQuantityForItem", "Order")" method="get">
+                <input style="width: 100px" type="number" id="quantity" name="quantity" min="1" max="@item.Quantity">
+                <button name="itemName" value="@item.Item">Add To Order</button>
+            </form>
+        </td>
+    </tr>
+}
+
+</table>

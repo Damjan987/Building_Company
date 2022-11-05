@@ -1,0 +1,9 @@
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\bin\Debug\BuildCompany.Services.dll
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\bin\Debug\BuildCompany.Services.pdb
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\bin\Debug\BuildCompany.Core.dll
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\bin\Debug\BuildCompany.Core.pdb
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\obj\Debug\BuildCompany.Services.csprojAssemblyReference.cache
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\obj\Debug\BuildCompany.Services.csproj.CoreCompileInputs.cache
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\obj\Debug\BuildCompany.Services.csproj.CopyComplete
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\obj\Debug\BuildCompany.Services.dll
+C:\Users\damja\source\repos\BuildCompany\BuildCompany.Services\obj\Debug\BuildCompany.Services.pdb

@@ -1,0 +1,40 @@
+﻿@model BuildCompany.Core.ViewModels.OrderOrderItemViewModel
+
+@{
+    ViewBag.Title = "OrderInfo";
+}
+
+<h2>Order Info</h2>
+
+@if (Model.OrderItems.ToList().Count > 0)
+{
+    <h3>Seller: @Model.Order.Seller</h3>
+
+    <br />
+
+
+    <h3>Amount: @Model.Order.Amount</h3>
+
+    <h4>Items in the basket are:</h4>
+
+    foreach (var item in Model.OrderItems)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+        </tr>
+        <br />
+    }
+
+    <form action="@Url.Action("OrderProcessing", "Order")" method="get">
+        <button>Finish the order</button>
+    </form>
+}
+else
+{
+    <h1>Your basket is currently empty</h1>
+}

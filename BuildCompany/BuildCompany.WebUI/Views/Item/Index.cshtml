@@ -1,0 +1,51 @@
+﻿@model BuildCompany.Core.ViewModels.CategoryItemsViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<br />
+
+@foreach (var category in Model.Categories)
+{
+    @Html.ActionLink(category.Name, "Index", new { Category = category.Name }, new { @class = Request["Category"] == category.Name ? "list-group-item list-group-item-success" : "list-group-item" })
+}
+
+<br />
+
+
+<table class="table">
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
